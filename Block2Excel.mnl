@@ -1,0 +1,18 @@
+;; =============================================================================
+;; Block2Excel.mnl - автоматически загружается AutoCAD при подгрузке
+;; одноимённого Block2Excel.cuix.
+;;
+;; Назначение: подгрузить BLOCK2EXCEL.lsp с командами B2E_*, BLOCK2EXCEL и т.д.
+;; Файл BLOCK2EXCEL.lsp должен лежать в одной из папок поддержки AutoCAD
+;; (OPTIONS -> Files -> Support File Search Path) или рядом с этим .mnl.
+;; =============================================================================
+
+(princ "\nЗагрузка Block2Excel...")
+
+;; Попытка 1: загрузить из той же папки, где лежит .mnl
+(if (not (vl-catch-all-error-p
+          (vl-catch-all-apply 'load (list "BLOCK2EXCEL"))))
+  (princ "\nКоманды Block2Excel доступны.")
+  (princ "\n! Не найден BLOCK2EXCEL.lsp. Положите его в папку поддержки AutoCAD."))
+
+(princ)
