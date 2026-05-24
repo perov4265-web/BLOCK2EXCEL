@@ -125,7 +125,7 @@ Block2Excel/
 
 ## Совместимость
 
-Протестировано на AutoCAD `<укажите версию>` (Windows).
+Протестировано на AutoCAD `2026` (Windows).
 Требуется поддержка AutoLISP / Visual LISP (`vl-load-com`).
 
 ---
